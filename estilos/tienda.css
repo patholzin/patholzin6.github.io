@@ -41,7 +41,11 @@ body {
     width: auto;
     vertical-align: middle;
 }
-
+.navegacion-izquierda img {
+    height: 30px;
+    width: auto;
+    vertical-align: middle;
+}
 .barra-navegacion ul {
     list-style: none;
     display: flex;
@@ -401,4 +405,5 @@ body {
 /* Color sombreado (Hover) */
 .barra-final a:hover {
     color: rgb(142, 142, 142);
+
 }
