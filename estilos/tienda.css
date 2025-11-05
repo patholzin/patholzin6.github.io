@@ -46,6 +46,7 @@ body {
     width: auto;
     vertical-align: middle;
 }
+
 .barra-navegacion ul {
     list-style: none;
     display: flex;
@@ -61,7 +62,7 @@ body {
 
 .barra-navegacion a.activo,
 .barra-navegacion a:hover {
-    color: black;
+    color: rgb(107, 104, 104);
 }
 
 .navegacion-derecha {
@@ -79,8 +80,8 @@ body {
     padding: 10px 20px; 
     border-bottom: none;
     position: sticky;
-    top: 0; /* Indica que debe pegarse a 0 píxeles de la parte superior de la ventana */
-    z-index: 1000; /* Asegura que la barra siempre esté por encima de otros elementos al hacer scroll */
+    top: 0;
+    z-index: 1000;
 }
 
 /* Estructura Secundaria */
@@ -113,6 +114,7 @@ body {
     font-weight: 400;
     transition: color 0.3s;
     font-size: 14px; 
+    cursor: pointer;
 }
 
 .navegacion-derecha-secundaria a {
@@ -180,17 +182,16 @@ body {
 
 /* Estilo para la flecha dentro del título */
 .minorista-tarjeta h3 .flecha-animada {
-    transition: transform 0.3s ease; /* Define la transición para que el movimiento sea suave */
+    transition: transform 0.3s ease;
     margin-left: 8px; 
 }
 
 .minorista-tarjeta h3:hover {
-    color: #4dc2ff; 
+    color: #5c5e5f; 
     cursor: pointer;
 }
 
 .minorista-tarjeta h3:hover .flecha-animada {
-    /* La propiedad 'transform: translateX(5px)' mueve la flecha 5px hacia la derecha */
     transform: translateX(5px); 
 }
 
@@ -217,7 +218,6 @@ body {
     padding-top: 40px; 
     padding-left: 20px; 
     padding-right: 20px;
-    /* Ajuste para mover el contenido secundario */
     transform: translateX(28px);
 }
 
@@ -227,10 +227,9 @@ body {
     line-height: 1.6;
 }
 
-/* GALERÍA DE PRODUCTOS (Venta Suéter)  */
+/* GALERÍA DE PRODUCTOS (Venta Suéter)  */
 
 .seccion-venta{
-    /* Ajuste para centrar correctamente */
     max-width: 1000px; 
     margin: 60px auto; 
     padding: 0 20px; 
@@ -244,7 +243,6 @@ body {
     margin-bottom: 30px; 
     text-align: left;
     
-    /* Asegura que el título también esté dentro del ancho máximo de la sección */
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
@@ -265,33 +263,12 @@ body {
 
 /* Estilos de los ítems individuales de la imagen */
 .item-imagen {
-    text-align: center; 
     border: none; 
-    
-    /* Mantenemos las transiciones para que los cambios sean suaves */
-    transition: 
-        box-shadow 0.3s ease, 
-        transform 0.3s ease,
-        background-color 0.3s ease, /* Transición para el color de fondo */
-        padding 0.3s ease,           /* Transición para el padding */
-        border-radius 0.3s ease;     /* Transición para el radio del borde */
-    transform: translateY(0); 
-    background-color: transparent; 
-    padding: 0;                    
-    border-radius: 0;              
 }
 .item-imagen:hover {
     background-color: #242424; 
-    padding: 15px; 
-    border-radius: 5px; 
-
-    box-shadow: inset 0 0 30px 5px #333333;
-    
-    transform: translateY(-3px); 
-    cursor: pointer; 
-}
+    }
 .item-imagen img {
-    /* Ajuste del tamaño para el centrado más fuerte */
     width: 80%; 
     border-radius: .5em; 
     padding: .5em; 
@@ -325,25 +302,42 @@ body {
 /* 4. DISEÑO RESPONSIVO (MEDIA QUERY) */
 
 @media (max-width: 768px) {
-    /* La regla '@media' se usa para aplicar estilos solo cuando el ancho de la ventana es menor o igual a 768px.
-        Esto permite que las 3 columnas de minoristas se apilen en una sola vertical para móviles. */
     .minoristas-contenedor {
         grid-template-columns: 1fr; 
     }
 
-    /* Agrega un poco de espacio entre las tarjetas apiladas */
     .minorista-tarjeta {
         margin-bottom: 30px; 
     }
-    
-    /* Regla responsiva para la nueva galería de suéteres */
-    .venta{
+        .venta{
         grid-template-columns: 1fr; 
     }
     
-    /* Asegura que las imágenes en móvil no se vean demasiado pequeñas al 60% */
     .item-imagen img {
         width: 85%; 
+    }
+    
+    .barra-navegacion,
+    .barra-navegacion-secundaria,
+    .barra-final {
+        padding: 10px 15px;
+        flex-wrap: wrap; 
+    }
+
+    .navegacion-izquierda nav ul,
+    .final-derecha ul { 
+        display: none;
+    }
+    
+    .barra-final {
+        flex-direction: column; 
+        text-align: center;
+        
+    }
+    
+    .barra-final ul {
+        gap: 10px;
+        margin-top: 5px;
     }
 }
 .contenido-secundario-final{
@@ -363,14 +357,11 @@ body {
 .barra-final {
     display: flex;
     width: 100%;
-    /* Distribuye el espacio entre los dos divs */
     justify-content: space-between;
     align-items: center;
-    /* Fondo oscuro, típico de un footer */
     background-color: #333333;
-    /* Espaciado interno */
     padding: 5px 20px;
-    border-top: 1px solid #444444; /* Puedes poner un borde superior si deseas */
+    border-top: 1px solid #444444;
 }
 
 /* Estilos para las secciones izquierda y derecha del footer */
@@ -400,10 +391,159 @@ body {
     font-weight: 400;
     transition: color 0.3s;
     font-size: 12px;
+    cursor: pointer;
 }
 
 /* Color sombreado (Hover) */
 .barra-final a:hover {
     color: rgb(142, 142, 142);
+}
+/* --- 1. ESTILOS PARA TABLET --- */
+@media (max-width: 1024px) {
 
+    /* Ajustamos los contenedores principales para que no se peguen a los bordes */
+    .contenido-principal, 
+    .contenido-secundario,
+    .contenido-secundario-pie,
+    .contenido-secundario-final,
+    .minoristas-contenedor,
+    .seccion-venta {
+        max-width: 100%; 
+        padding-left: 30px; 
+        padding-right: 30px;
+    }
+
+    /* Ajustamos el título principal */
+    .contenido-principal h1 {
+        font-size: 42px;
+    }
+
+    /* --- Pasamos las rejillas de 3 a 2 columnas --- */
+    .minoristas-contenedor {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .venta {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Ajustamos el H2 de título de venta que tenía un max-width fijo */
+    .titulo-venta {
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    /* Reseteamos el transform que movía el texto */
+    .contenido-secundario-pie {
+        transform: none;
+    }
+}
+
+
+/* --- 2. ESTILOS PARA CELULAR --- */
+
+@media (max-width: 768px) {
+
+    .barra-navegacion {
+        flex-direction: column; 
+        gap: 20px; 
+        padding: 20px 15px;
+    }
+
+    .barra-navegacion ul {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px; 
+    }
+
+    .navegacion-izquierda {
+        flex-direction: column; 
+        gap: 15px;
+        width: 100%;
+    }
+
+    .iconos-navegacion {
+        justify-content: center; 
+        width: 100%;
+    }
+
+
+    /* --- 2. AJUSTAR LA BARRA SECUNDARIA (CATEGORÍAS) --- */
+    .barra-navegacion-secundaria {
+        padding: 10px 15px;
+    }
+
+    .barra-navegacion-secundaria .navegacion-izquierda {
+        overflow-x: auto;
+        white-space: nowrap; 
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .barra-navegacion-secundaria .navegacion-izquierda::-webkit-scrollbar {
+        display: none; 
+    }
+
+    .navegacion-derecha-secundaria {
+        display: none; 
+    }
+
+
+    /* --- 3. AJUSTAR TÍTULOS Y CONTENIDO --- */
+    .contenido-principal, 
+    .contenido-secundario,
+    .contenido-secundario-pie,
+    .contenido-secundario-final,
+    .minoristas-contenedor,
+    .seccion-venta {
+        margin-top: 40px; 
+        padding-left: 20px; 
+        padding-right: 20px;
+    }
+
+    .contenido-principal h1 {
+        font-size: 32px; 
+        line-height: 1.2;
+    }
+
+    .contenido-secundario h2,
+    .titulo-venta {
+        font-size: 26px; 
+    }
+    
+    .contenido-secundario-pie {
+        margin-bottom: 50px;
+    }
+
+
+    /*4. PASAMOS LAS REJILLAS A 1 COLUMNA*/
+    .minoristas-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .minorista-tarjeta {
+        margin-bottom: 30px;
+    }
+    
+    .venta {
+        grid-template-columns: 1fr;
+    }
+    
+    .item-imagen img {
+        width: 85%; 
+    }
+
+
+    /*5. AJUSTAR EL FOOTER */
+    .barra-final {
+        flex-direction: column; 
+        gap: 20px;
+        padding: 25px;
+    }
+
+    .barra-final ul {
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+    }
 }
