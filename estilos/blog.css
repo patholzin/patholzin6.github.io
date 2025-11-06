@@ -33,7 +33,7 @@ header nav.primary {
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     background-color: #64baff;
 }
@@ -419,3 +419,4 @@ footer a:hover {
         gap: 1rem;
     }
 }
+
