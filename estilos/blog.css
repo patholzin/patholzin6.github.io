@@ -302,7 +302,7 @@ footer p {
 
 footer ul {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     list-style: none;
     gap: 1.5rem;
     flex-wrap: wrap;
@@ -419,5 +419,6 @@ footer a:hover {
         gap: 1rem;
     }
 }
+
 
 
